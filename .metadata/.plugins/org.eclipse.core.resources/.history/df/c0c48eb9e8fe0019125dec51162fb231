@@ -1,0 +1,46 @@
+package com.ibm.SpringBootInt.players;
+
+public class Player {
+
+	Integer id;
+	String name, place, sport;
+
+	public Player(int id, String name, String place, String sport) {
+		this.id = id;
+		this.name = name;
+		this.place = place;
+		this.sport = sport;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getPlace() {
+		return place;
+	}
+
+	public void setPlace(String place) {
+		this.place = place;
+	}
+
+	public String getSport() {
+		return sport;
+	}
+
+	public void setSport(String sport) {
+		this.sport = sport;
+	}
+}

@@ -1,0 +1,50 @@
+package com.ibm.SpringBootInt.players;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.ibm.training.users.User;
+
+@Repository
+public class PlayerRepository {
+
+	List<Player> listOfPlayers = new ArrayList<Player>(Arrays.asList(new Player(1, "Sam", "Tennesse", "Football"),
+			new Player(2, "Roger", "Ohio", "Ice Hockey"), new Player(3, "Fischer", "Indiana", "Swimming")));
+
+	public List<Player> getAllPlayers() {
+		return listOfPlayers;
+	}
+
+	public Player getPlayer(int id) {
+		return listOfPlayers.stream().filter(player -> player.getId().equals(id)).findFirst().get();
+	}
+
+	public void addPlayer(Player player) {
+		listOfPlayers.add(player);
+	}
+	
+	public void updatePlayer(Player player, int id) {
+		for(Player curPlayer: listOfPlayers) {
+			if(curPlayer.getId().equals(id)) {
+				listOfPlayers.set(listOfPlayers.indexOf(curPlayer), player);
+			}
+		}
+		
+	}
+
+	public void deleteUser(int id) {
+		User temp = null;
+		for(User curUser: listOfUsers) {
+			if(curUser.getId().equals(id)) {
+				temp = curUser;
+				break;
+			}
+		}
+		listOfUsers.remove(temp);
+		
+	}
+
+}

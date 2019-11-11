@@ -1,0 +1,25 @@
+package com.ibm.SpringBootInt.players;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class PlayerService {
+
+	@Autowired
+	PlayerRepository repo;
+
+	public List<Player> getAllPlayers() {
+		return repo.getAllPlayers();
+	}
+
+	public Player getPlayer(int id) {
+		return repo.getPlayer(id);
+	}
+
+	public Player addPlayer(Player player) {
+		reurn repo.addPlayer(player);
+	}
+}

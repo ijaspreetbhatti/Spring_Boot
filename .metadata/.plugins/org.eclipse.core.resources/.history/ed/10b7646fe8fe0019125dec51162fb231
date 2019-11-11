@@ -1,0 +1,27 @@
+package com.ibm.SpringBootInt.players;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+@Repository
+public class PlayerDao {
+	
+	List<Player> listOfPlayers = new ArrayList<Player>(Arrays.asList(
+			new Player(1, "Sam", "Tennesse", "Football"),
+			new Player(2, "Roger", "Ohio", "Ice Hockey"),
+			new Player(3, "Fischer", "Indiana", "Swimming")
+			));
+
+	public List<Player> getAllPlayers() {
+		return listOfPlayers;
+	}
+
+	public Player getPlayer(int id) {
+		return null;
+	}
+	
+
+}
